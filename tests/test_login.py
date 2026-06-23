@@ -7,9 +7,6 @@ from pages.login_page import LoginPage
 def test_login(custom_page):
     login_page = LoginPage(custom_page)
 
-    username = os.getenv("USERNAME", "your_username")
-    password = os.getenv("PASSWORD", "your_password")
-
     login_page.open_application()
     login_page.login("hashedintestuser109", "Hashedintestuser109@12345")
     #wait for 5 seconds for the dashboard to load
