@@ -36,7 +36,7 @@ def login(custom_page):
     login_page = LoginPage(custom_page)
     login_page.open_application()
     login_page.login("hashedintestuser109", "Hashedintestuser109@12345")
-    custom_page.wait_for_timeout(10000)
+    custom_page.wait_for_timeout(20000)
     login_page.close_popup_if_visible()
     custom_page.wait_for_timeout(7000)
     return custom_page

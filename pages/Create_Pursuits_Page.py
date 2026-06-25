@@ -18,7 +18,7 @@ class CreatePursuitsPage:
         self.lbl_Add_New_Client = page.locator("//span[normalize-space()='Add New Client']")
         self.lbl_Client = page.get_by_text("Client").nth(1)
         self.lbl_Pursuit_Name = page.get_by_text("Pursuit Name").nth(0)
-        self.lbl_Proposal_Type= page.get_by_text("Proposal Type").nth(0)
+        self.lbl_Proposal_type= page.get_by_text("Proposal Type").nth(0)
         self.lbl_Type_Of_Project= page.get_by_text("Type Of Project").nth(0)
         self.lbl_Country= page.get_by_text("Country").nth(0)
         self.lbl_Industry= page.get_by_text("Industry").nth(0)
@@ -56,7 +56,7 @@ class CreatePursuitsPage:
         self.dd_sector=page.locator('#rc_select_15')
 
         self.opt_Industry=page.get_by_text('Technology Media and Telecom').nth(0)
-        self.opt_Sector=page.get_by_text('Telecom, Media and Entertainment').nth(1)
+        self.opt_Sector=page.get_by_text('AdTech').nth(0)
 
         # Locate the pursuit name textbox by its placeholder
         self.txt_Pursuits = page.locator("input[placeholder='Enter pursuit name']")
@@ -89,6 +89,11 @@ class CreatePursuitsPage:
         self.lbl_Proposal_Type=page.get_by_text("Proposal Type")
         self.lbl_Edit=page.locator("(//button[@type='button'])[5]")
         self.lbl_View_More=page.locator("(//button[@type='button'])[6]")
+
+        self.txt_Country_Value=page.get_by_text("India")
+        self.txt_Proposal_Type_Value=page.get_by_text("RFI")
+        self.txt_Billing_Arrangement_Value=page.get_by_text("Fixed Fee")
+        self.txt_Type_of_Project_Value=page.get_by_text("Test Automation")
         
         
         # Required Fields
@@ -103,6 +108,7 @@ class CreatePursuitsPage:
         self.btn_Create.click()
         print("Clicked on Create button without filling required fields to validate error messages")
     def Add_New_Client(self):
+        self.page.wait_for_timeout(2000)
         self.lbl_Add_New_Client.click(force=True)
         print("Clicked on Add New Client button to add a new client")
         self.page.wait_for_timeout(2000)

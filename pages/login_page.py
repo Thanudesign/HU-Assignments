@@ -22,7 +22,7 @@ class LoginPage:
         self.submit_button.click()
 
     def close_popup_if_visible(self):
-        if self.close_button.is_visible(timeout=3000):
+        if self.close_button.is_visible(timeout=4000):
             self.close_button.click(force=True)
 
     def validate_dashboard_visible(self):
