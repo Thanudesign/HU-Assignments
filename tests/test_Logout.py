@@ -5,6 +5,7 @@ from pages.login_page import LoginPage
 from pages.Dashboard_Validation_page import DashboardPage
 from pages.Logout_page import LogoutPage
 
+
 def test_logout(login):
      page = login
      dashboard_page = DashboardPage(page)
